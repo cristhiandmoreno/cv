@@ -1,0 +1,9 @@
+title: Hoja de Vida
+email: correo@ejemplo.com
+description: >-
+  CV Académico y Profesional
+baseurl: ""
+url: ""
+
+sass:
+  style: compressed

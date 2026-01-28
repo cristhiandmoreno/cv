@@ -1,0 +1,951 @@
+---
+---
+/* ===== VARIABLES Y RESET ===== */
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+:root {
+  --font-main: 'Vollkorn', serif;
+  --font-secondary: 'Inter', sans-serif;
+  --bg-color: #F9F6F0;
+  --bg-paper: #ffffff;
+  --text-color: #111111;
+  --text-secondary: #333333;
+  --green-h: #00751F;
+  --green-light: #e6f4ea;
+  --border-color: #111111;
+  --border-light: #ddd;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --print-margin: 20mm;
+}
+
+* { 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 16px;
+  padding: 20px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.dossier-page {
+  max-width: 210mm;
+  min-height: 297mm;
+  background: var(--bg-paper);
+  margin: 0 auto;
+  padding: 40px 50px;
+  border: 1px solid var(--border-color);
+  box-shadow: 12px 12px 0px var(--green-h), var(--shadow);
+  position: relative;
+}
+
+/* ===== HEADER ===== */
+.dossier-header {
+  border-bottom: 3px double var(--border-color);
+  margin-bottom: 40px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.header-identity h1 {
+  font-size: 2.8rem;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.header-role {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--green-h);
+  font-weight: 600;
+  margin-top: 10px;
+  font-family: var(--font-secondary);
+}
+
+.header-contact {
+  text-align: right;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-family: var(--font-secondary);
+}
+
+.header-contact div {
+  margin-bottom: 5px;
+}
+
+.header-contact i {
+  margin-right: 8px;
+  width: 16px;
+  text-align: center;
+}
+
+/* ===== GRID ===== */
+.dossier-grid {
+  display: grid;
+  grid-template-columns: 30% 68%;
+  gap: 2%;
+  margin-top: 20px;
+}
+
+/* ===== SIDEBAR ===== */
+.dossier-sidebar {
+  position: relative;
+}
+
+.profile-img-container {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border: 2px solid var(--border-color);
+  margin-bottom: 30px;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.profile-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.profile-img-container:hover img {
+  filter: grayscale(0%);
+}
+
+/* ===== TÍTULOS ===== */
+h2.section-title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+  margin: 0 0 25px 0;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+h3.subsection-title {
+  font-size: 0.95rem;
+  color: var(--green-h);
+  margin: 15px 0 10px 0;
+  font-weight: 600;
+  font-family: var(--font-secondary);
+}
+
+/* ===== TEXTO Y LISTAS ===== */
+.text-justify {
+  text-align: justify;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  border-bottom: 1px dotted var(--border-light);
+  padding: 8px 0;
+  font-size: 0.92rem;
+  position: relative;
+  padding-left: 15px;
+}
+
+.skills-list li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--green-h);
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+}
+
+.achievements-list li {
+  margin-bottom: 8px;
+  font-size: 0.92rem;
+  padding-left: 15px;
+  position: relative;
+}
+
+.achievements-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--green-h);
+  font-weight: bold;
+}
+
+/* ===== EXPERIENCIA ===== */
+.exp-item {
+  margin-bottom: 30px;
+  border-left: 3px solid var(--green-h);
+  padding-left: 20px;
+  position: relative;
+}
+
+.exp-item:before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--bg-paper);
+  border: 2px solid var(--green-h);
+  border-radius: 50%;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.exp-role {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.exp-date {
+  font-size: 0.85rem;
+  background: var(--green-light);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-family: var(--font-secondary);
+  font-weight: 500;
+}
+
+.exp-place {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-family: var(--font-secondary);
+}
+
+.exp-desc {
+  font-size: 0.95rem;
+  margin: 10px 0;
+  white-space: pre-line;
+  font-family: var(--font-secondary);
+}
+
+.exp-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--green-h);
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.exp-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== FORMACIÓN ===== */
+.edu-item {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.edu-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-family: var(--font-secondary);
+}
+
+.edu-institution {
+  font-size: 0.95rem;
+  color: var(--green-h);
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.edu-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-family: var(--font-secondary);
+}
+
+/* ===== FORMACIÓN COMPLEMENTARIA ===== */
+.formacion-category {
+  margin-bottom: 30px;
+}
+
+.edu-category-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  color: var(--green-h);
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.edu-complementaria-item {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dotted var(--border-light);
+}
+
+.edu-complementaria-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.edu-entity {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.edu-complementaria-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  font-family: var(--font-secondary);
+}
+
+.cert-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 2px 8px;
+  margin-left: 10px;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: all 0.2s;
+  font-family: var(--font-secondary);
+}
+
+.cert-link:hover {
+  background: var(--green-h);
+  border-color: var(--green-h);
+  color: white;
+}
+
+.edu-status {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--green-h);
+  font-family: var(--font-secondary);
+}
+
+/* ===== BOTÓN DESCARGA ===== */
+.btn-download {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--text-color);
+  color: var(--bg-paper);
+  border: 2px solid var(--text-color);
+  padding: 12px 24px;
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 6px 6px 0px var(--green-h);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border-radius: 0;
+  letter-spacing: 0.5px;
+}
+
+.btn-download:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px var(--green-h);
+}
+
+.btn-download:active {
+  transform: translate(0, 0);
+  box-shadow: 4px 4px 0px var(--green-h);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .dossier-page {
+    padding: 30px;
+    margin: 10px;
+    box-shadow: 6px 6px 0px var(--green-h);
+  }
+  
+  .dossier-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .dossier-sidebar {
+    order: -1;
+  }
+  
+  .profile-img-container {
+    width: 200px;
+    margin: 0 auto 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  .dossier-page {
+    padding: 25px;
+    box-shadow: 4px 4px 0px var(--green-h);
+  }
+  
+  .dossier-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .header-identity h1 {
+    font-size: 2.2rem;
+  }
+  
+  .header-contact {
+    text-align: left;
+  }
+  
+  .btn-download {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 18px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dossier-page {
+    padding: 20px;
+  }
+  
+  .header-identity h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header-role {
+    font-size: 1rem;
+  }
+  
+  .exp-header, .edu-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .exp-date, .edu-date {
+    align-self: flex-start;
+    margin-top: 5px;
+  }
+}
+
+/* ===== PRINT STYLES (PARA PDF) ===== */
+@media print {
+  @page {
+    size: A4;
+    margin: var(--print-margin);
+  }
+  
+  body {
+    background: white;
+    padding: 0;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .dossier-page {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+  
+  .btn-download {
+    display: none;
+  }
+  
+  .dossier-header {
+    border-bottom-width: 2px;
+  }
+  
+  .profile-img-container img {
+    filter: grayscale(100%) !important;
+  }
+  
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+  
+  .cert-link {
+    display: none;
+  }
+  
+  /* Evitar cortes de página en elementos importantes */
+  h2.section-title, 
+  .exp-item, 
+  .edu-item,
+  .edu-complementaria-item {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+  
+  /* Asegurar que no se corten títulos solos */
+  h2.section-title {
+    page-break-before: auto;
+  }
+  
+  /* Mejorar espaciado para impresión */
+  .dossier-grid {
+    gap: 20pt;
+  }
+  
+  /* Añadir URLs después de los enlaces */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+  
+  /* Ocultar elementos innecesarios en print */
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ===== IMPRIMIR CV (ESTILO TRADICIONAL) ===== */
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm 15mm 15mm 15mm;
+    marks: crop cross;
+  }
+  
+  /* Reset para papel */
+  body {
+    background: white !important;
+    color: black !important;
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Contenedor principal como hoja de papel */
+  .dossier-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: white !important;
+    position: relative !important;
+  }
+  
+  /* Ocultar elementos no necesarios */
+  .btn-download,
+  .cert-link,
+  .profile-img-container:hover img,
+  .exp-link,
+  .no-print {
+    display: none !important;
+  }
+  
+  /* HEADER estilo tradicional */
+  .dossier-header {
+    border-bottom: 2px solid #000 !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 15px !important;
+    display: block !important;
+    text-align: center !important;
+  }
+  
+  .header-identity h1 {
+    font-size: 24pt !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+    color: black !important;
+    font-family: "Times New Roman", Times, serif !important;
+  }
+  
+  .header-role {
+    font-size: 12pt !important;
+    font-style: normal !important;
+    color: #333 !important;
+    margin-bottom: 15px !important;
+    font-weight: normal !important;
+  }
+  
+  .header-contact {
+    text-align: center !important;
+    font-size: 10pt !important;
+    font-family: "Times New Roman", Times, serif !important;
+    margin-top: 10px !important;
+  }
+  
+  .header-contact div {
+    display: inline-block !important;
+    margin: 0 15px !important;
+  }
+  
+  .header-contact i {
+    display: none !important;
+  }
+  
+  /* GRID de una columna para impresión */
+  .dossier-grid {
+    display: block !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Sidebar a la izquierda con flotado */
+  .dossier-sidebar {
+    width: 35% !important;
+    float: left !important;
+    margin-right: 5% !important;
+    padding-top: 0 !important;
+  }
+  
+  main {
+    width: 60% !important;
+    float: right !important;
+    clear: none !important;
+  }
+  
+  /* Foto más pequeña y profesional */
+  .profile-img-container {
+    width: 80% !important;
+    max-width: 120px !important;
+    margin: 0 auto 20px auto !important;
+    border: 1px solid #ccc !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  .profile-img-container img {
+    filter: grayscale(100%) !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Títulos de sección estilo tradicional */
+  h2.section-title {
+    font-size: 14pt !important;
+    text-transform: uppercase !important;
+    border-bottom: 1px solid #000 !important;
+    padding-bottom: 3px !important;
+    margin: 25px 0 15px 0 !important;
+    font-weight: bold !important;
+    color: black !important;
+    font-family: "Times New Roman", Times, serif !important;
+    letter-spacing: 0.5pt !important;
+    page-break-after: avoid !important;
+  }
+  
+  /* Texto más legible en papel */
+  .text-justify {
+    font-size: 10pt !important;
+    text-align: left !important;
+    line-height: 1.4 !important;
+    margin-bottom: 15px !important;
+  }
+  
+  /* Listas más compactas */
+  .skills-list,
+  .achievements-list {
+    margin-left: 15px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .skills-list li,
+  .achievements-list li {
+    font-size: 10pt !important;
+    padding: 2px 0 !important;
+    border-bottom: none !important;
+    list-style-type: disc !important;
+  }
+  
+  .skills-list li:before,
+  .achievements-list li:before {
+    display: none !important;
+  }
+  
+  /* Experiencia profesional - estilo clásico */
+  .exp-item {
+    margin-bottom: 20px !important;
+    border-left: none !important;
+    padding-left: 0 !important;
+    page-break-inside: avoid !important;
+    position: relative !important;
+  }
+  
+  .exp-item:before {
+    display: none !important;
+  }
+  
+  .exp-header {
+    display: block !important;
+    margin-bottom: 5px !important;
+  }
+  
+  .exp-role {
+    font-size: 11pt !important;
+    font-weight: bold !important;
+    display: block !important;
+    margin-bottom: 3px !important;
+  }
+  
+  .exp-date {
+    font-size: 9pt !important;
+    background: none !important;
+    padding: 0 !important;
+    font-weight: normal !important;
+    color: #666 !important;
+    float: right !important;
+    margin-top: -18px !important;
+  }
+  
+  .exp-place {
+    font-size: 10pt !important;
+    font-style: italic !important;
+    color: #333 !important;
+    margin-bottom: 5px !important;
+    display: block !important;
+  }
+  
+  .exp-desc {
+    font-size: 10pt !important;
+    margin: 8px 0 0 0 !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+  }
+  
+  /* Formación académica */
+  .edu-item {
+    margin-bottom: 15px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px dotted #ccc !important;
+    page-break-inside: avoid !important;
+  }
+  
+  .edu-header {
+    display: block !important;
+    margin-bottom: 3px !important;
+  }
+  
+  .edu-header strong {
+    font-size: 10.5pt !important;
+    font-weight: bold !important;
+    display: block !important;
+  }
+  
+  .edu-date {
+    font-size: 9pt !important;
+    color: #666 !important;
+    float: right !important;
+    margin-top: -15px !important;
+  }
+  
+  .edu-institution {
+    font-size: 10pt !important;
+    color: #333 !important;
+    font-style: italic !important;
+    margin-bottom: 3px !important;
+  }
+  
+  .edu-desc {
+    font-size: 9.5pt !important;
+    color: #666 !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Formación complementaria */
+  .formacion-category {
+    margin-bottom: 20px !important;
+  }
+  
+  .edu-category-title {
+    font-size: 11pt !important;
+    font-weight: bold !important;
+    margin: 20px 0 10px 0 !important;
+    color: #333 !important;
+    border-bottom: 1px solid #999 !important;
+    padding-bottom: 2px !important;
+  }
+  
+  .edu-complementaria-item {
+    margin-bottom: 12px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px dotted #eee !important;
+    page-break-inside: avoid !important;
+  }
+  
+  .edu-complementaria-header {
+    display: block !important;
+    margin-bottom: 3px !important;
+  }
+  
+  .edu-complementaria-header strong {
+    font-size: 10pt !important;
+    font-weight: bold !important;
+  }
+  
+  .edu-entity {
+    font-size: 9.5pt !important;
+    color: #666 !important;
+  }
+  
+  .edu-complementaria-date {
+    font-size: 9pt !important;
+    color: #666 !important;
+    float: right !important;
+    margin-top: -15px !important;
+  }
+  
+  .edu-status {
+    font-size: 9pt !important;
+    font-weight: bold !important;
+    color: #333 !important;
+    margin-top: 3px !important;
+  }
+  
+  /* Asegurar que los enlaces se vean bien */
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+  
+  /* URLs impresas después de los enlaces */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 8pt !important;
+    color: #666 !important;
+    font-style: italic !important;
+    word-break: break-all !important;
+  }
+  
+  /* Footer de impresión */
+  footer {
+    border-top: 1px solid #ccc !important;
+    margin-top: 30px !important;
+    padding-top: 10px !important;
+    text-align: center !important;
+    font-size: 9pt !important;
+    color: #666 !important;
+    font-style: italic !important;
+    clear: both !important;
+    position: relative !important;
+    bottom: 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Control de saltos de página */
+  h2.section-title,
+  h3.edu-category-title {
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  
+  .exp-item,
+  .edu-item,
+  .edu-complementaria-item {
+    page-break-inside: avoid !important;
+    page-break-before: auto !important;
+  }
+  
+  /* Evitar que se corten títulos solos al final de página */
+  h2.section-title:last-child {
+    page-break-before: always !important;
+  }
+  
+  /* Líneas horizontales para separar secciones en print */
+  .section-title::after {
+    content: '' !important;
+    display: block !important;
+    height: 1px !important;
+    background: #000 !important;
+    width: 100% !important;
+    margin-top: 3px !important;
+  }
+  
+  /* Clearfix para impresión */
+  .dossier-grid:after,
+  .formacion-category:after {
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
+  }
+  
+  /* Ajustes específicos para Chrome/Chromium */
+  @media print and (-webkit-min-device-pixel-ratio: 0) {
+    body {
+      -webkit-print-color-adjust: exact !important;
+    }
+    
+    .dossier-page {
+      print-color-adjust: exact !important;
+    }
+    
+    /* Chrome necesita márgenes más grandes */
+    @page {
+      margin: 20mm !important;
+    }
+  }
+  
+  /* Ajustes para Firefox */
+  @media print and (min-moz-device-pixel-ratio: 0) {
+    /* Firefox-specific print styles if needed */
+  }
+}
