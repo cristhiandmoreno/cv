@@ -1,6 +1,6 @@
 nombre: "Cristhian David Moreno Cardona"
 titulo: "Analista de Opinión | Estudiante de Derecho"
-foto: "assets/img/perfil.png"
+foto: "/cv/assets/img/perfil.png"
 
 contacto:
   email: "crdmcx@gmail.com"
@@ -65,27 +65,27 @@ formacion_complementaria:
       - nombre: "Certificate Program in Public Procurement"
         entidad: "World Bank Group & iNet"
         periodo: "2026"
-        url: "/assets/certificados/publicprocurement.pdf"
+        url: "/cv/assets/certificados/publicprocurement.pdf"
 
       - nombre: "Control Social a la Gestión Pública"
         entidad: "ESAP"
         periodo: "2025"
-        url: "/assets/certificados/controlsocial.pdf"
+        url: "/cv/assets/certificados/controlsocial.pdf"
 
       - nombre: "Desarrollo Web Frontend"
         entidad: "Google"
         periodo: "2022"
-        url: "/assets/certificados/desarrollogoogle.pdf"
+        url: "/cv/assets/certificados/desarrollogoogle.pdf"
 
       - nombre: "Desarrollo Web Full Stack"
         entidad: "Next_U"
         periodo: "2022"
-        url: "/assets/certificados/desarrollonextu.pdf"
+        url: "/cv/assets/certificados/desarrollonextu.pdf"
 
       - nombre: "Introducción a las políticas públicas"
         entidad: "ESAP"
         periodo: "2025"
-        url: "/assets/certificados/intropoliticaspublicas.pdf"
+        url: "/cv/assets/certificados/intropoliticaspublicas.pdf"
 
 habilidades:
   tecnicas:
